@@ -9,16 +9,19 @@ body {
   text-align: center;
 }
 
+// Responsive img
 img {
   max-width: 100%;
 }
 
+// Container
 .container {
   margin: 0 auto;
   width: 1200px;
   max-width: 1200px;
 }
 
+// Utility flex
 .flex {
   display: flex;
 }
@@ -41,12 +44,4 @@ img {
 
 .ai-center {
   align-items: center;
-}
-
-header {
-  height: 80px;
-  background-color: #1b2834;
-}
-header .logo {
-  max-width: 50px;
 }

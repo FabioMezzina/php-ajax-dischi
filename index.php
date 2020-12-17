@@ -8,7 +8,19 @@
   <link rel="stylesheet" href="./dist/css/main.css">
 </head>
 <body>
-  
+  <!-- HEADER -->
+  <header class="flex ai-center">
+    <div class="container">
+      <div class="logo">
+        <a href="./">
+          <img src="./img/logo.png" alt="Spotify">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main></main>
 
   <!-- JS -->
   <script src="./dist/js/main.js"></script>
