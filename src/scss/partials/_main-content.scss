@@ -1,0 +1,25 @@
+main {
+  flex-grow: 1;
+  padding: 100px 0;
+  background-color: $main-bg;
+}
+
+.cd-wrapper {
+  margin: 40px;
+  padding: 30px 40px;
+  width: 300px;
+  background-color: $cd-bg;
+  cursor: pointer;
+  .cd-img-wrapper {
+    transition: .4s;
+  }
+  &:hover .cd-img-wrapper {
+    transform: scale(1.05);
+  }
+  * {
+    margin-bottom: 10px;
+  }
+  span {
+    display: block;
+  }
+}

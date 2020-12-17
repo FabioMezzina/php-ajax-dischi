@@ -5,8 +5,11 @@
 }
 
 body {
+  position: relative;
+  // padding-top: 80px;
   min-height: 100vh;
   text-align: center;
+  color: $primary-color;
 }
 
 // Responsive img
@@ -17,8 +20,8 @@ img {
 // Container
 .container {
   margin: 0 auto;
-  width: 1200px;
-  max-width: 1200px;
+  width: 1400px;
+  max-width: 1400px;
 }
 
 // Utility flex
@@ -45,3 +48,19 @@ img {
 .ai-center {
   align-items: center;
 }
+
+// TYPOGRAPHY
+h2 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+span {
+  font-size: 12px;
+}
+
+// Spacing
