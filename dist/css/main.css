@@ -66,6 +66,7 @@ header {
   height: 80px;
   background-color: rgba(27, 40, 52, 0.9);
   box-shadow: 0 0 6px #000;
+  z-index: 1;
 }
 header .logo {
   max-width: 50px;
@@ -88,7 +89,7 @@ main {
   transition: 0.4s;
 }
 .cd-wrapper:hover .cd-img-wrapper {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 .cd-wrapper * {
   margin-bottom: 10px;

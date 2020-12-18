@@ -19,5 +19,9 @@
     "sass": "^1.30.0",
     "sass-loader": "^8.0.2",
     "vue-template-compiler": "^2.6.12"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "vue": "^2.6.12"
   }
 }

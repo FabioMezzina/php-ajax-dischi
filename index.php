@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/src/script/database.php';
+<?php require_once __DIR__ . '/partials/database.php';
 ?>
 
 <!DOCTYPE html>
@@ -11,33 +11,34 @@
   <link rel="stylesheet" href="./dist/css/main.css">
 </head>
 <body class="flex fd-col">
-  <!-- HEADER -->
-  <header class="flex ai-center">
-    <div class="container">
-      <div class="logo">
-        <a href="./">
-          <img src="./img/logo.png" alt="Spotify">
-        </a>
-      </div>
-    </div>
-  </header>
+  <div id="app">
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <div class="container flex jc-center f-wrap">
-      <?php foreach($database as $cd) { ?>
-        <div class="cd-wrapper">
-          <div class="cd-img-wrapper">
-            <img src="<?php echo $cd['poster'] ?>" alt="">
-          </div>
-          <h2><?php echo $cd['title'] ?></h2>
-          <span><?php echo $cd['author'] ?></span>
-          <p><?php echo $cd['year'] ?></p>
-          <span><?php echo $cd['genre'] ?></span>
+    <!-- HEADER -->
+    <header class="flex ai-center">
+      <div class="container">
+        <div class="logo">
+          <a href="./">
+            <img src="./img/logo.png" alt="Spotify">
+          </a>
         </div>
-      <?php  } ?>
-    </div>
-  </main>
+      </div>
+    </header>
+  
+    <!-- MAIN CONTENT -->
+    <main>
+      <div class="container flex jc-center f-wrap">
+          <div class="cd-wrapper" v-for="cd in database">
+            <div class="cd-img-wrapper">
+              <img :src="cd.poster" :alt="cd.title">
+            </div>
+            <h2>{{ cd.title }}</h2>
+            <span>{{ cd.author }}</span>
+            <p>{{ cd.year }}</p>
+            <span>{{ cd.genre }}</span>
+          </div>
+      </div>
+    </main>
+  </div>
 
   <!-- JS -->
   <script src="./dist/js/main.js"></script>
