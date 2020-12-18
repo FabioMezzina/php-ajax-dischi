@@ -7,8 +7,8 @@
   <!-- Style -->
   <link rel="stylesheet" href="./dist/css/main.css">
 </head>
-<body class="flex fd-col">
-  <div id="app">
+<body>
+  <div id="app" class="flex fd-col">
 
     <!-- HEADER -->
     <header class="flex ai-center">

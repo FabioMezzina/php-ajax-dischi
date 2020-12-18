@@ -6,10 +6,12 @@
 
 body {
   position: relative;
-  // padding-top: 80px;
-  min-height: 100vh;
   text-align: center;
   color: $primary-color;
+}
+
+#app {
+  min-height: 100vh;
 }
 
 // Responsive img
@@ -62,5 +64,3 @@ p {
 span {
   font-size: 12px;
 }
-
-// Spacing
