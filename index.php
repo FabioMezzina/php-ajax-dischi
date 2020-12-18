@@ -23,7 +23,16 @@
   
     <!-- MAIN CONTENT -->
     <main>
-      <div class="container flex jc-center f-wrap">
+      <!-- Filter section -->
+      <section class="filter-section">
+        <select name="author" id="author" v-model="authorToFilter" @change="filterAuthor">
+          <option value="All">All</option>
+          <option v-for="author in authorList" :value="author">{{ author }}</option>
+        </select>
+      </section>
+
+      <!-- CDs section -->
+      <section class="container flex jc-center f-wrap">
           <div class="cd-wrapper" v-for="cd in database">
             <div class="cd-img-wrapper">
               <img :src="cd.poster" :alt="cd.title">
@@ -33,7 +42,7 @@
             <p>{{ cd.year }}</p>
             <span>{{ cd.genre }}</span>
           </div>
-      </div>
+      </section>
     </main>
   </div>
 

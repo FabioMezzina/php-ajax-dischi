@@ -14423,18 +14423,64 @@ __webpack_require__.r(__webpack_exports__);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    database: []
+    database: [],
+    // author list to populate the html select list
+    authorList: [],
+    // author to filter selected by user
+    authorToFilter: 'All',
+    // db filter script path
+    dbFilterPath: window.location.href + 'partials/scripts/send_json_db.php'
   },
+  // <- End Data
   created: function created() {
     var _this = this;
 
-    var dbPath = window.location.href + 'partials/scripts/send_json_db.php';
-    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(dbPath).then(function (result) {
-      _this.database = result.data;
+    // First call, the whole db is returned (author = 'All')
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.dbFilterPath, {
+      params: {
+        author: 'All'
+      }
+    }).then(function (response) {
+      _this.database = response.data; // create the author list to be displayed in the select
+
+      _this.createAuthorList();
     })["catch"](function (e) {
       console.log(e);
     });
-  }
+  },
+  // <- End Created()
+  methods: {
+    /**
+     * create an array of authors based on the cds database
+     */
+    createAuthorList: function createAuthorList() {
+      var _this2 = this;
+
+      this.database.forEach(function (cd) {
+        if (!_this2.authorList.includes(cd.author)) {
+          _this2.authorList.push(cd.author);
+        }
+      });
+    },
+
+    /**
+     * Ask for a filtered database
+     */
+    filterAuthor: function filterAuthor() {
+      var _this3 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(this.dbFilterPath, {
+        params: {
+          author: this.authorToFilter
+        }
+      }).then(function (response) {
+        _this3.database = response.data;
+      })["catch"](function (e) {
+        console.log(e);
+      });
+    }
+  } // <- End Methods
+
 });
 
 /***/ }),
